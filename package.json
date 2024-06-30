@@ -1,7 +1,7 @@
 {
   "name": "audio-routing-graph",
   "version": "1.0.0",
-  "description": "",
+  "description": "Creates an audio routing chain with custom script processing.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
