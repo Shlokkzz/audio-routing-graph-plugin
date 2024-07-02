@@ -180,7 +180,7 @@ class AudioRoutingGraphPlugin {
     }
 
 
-    addNode(nodeName, nodeOptions) {
+    async addNode(nodeName, nodeOptions) {
         switch(nodeName) {
             case 'GAIN': 
                 this._addGainNode(nodeOptions);
@@ -207,7 +207,7 @@ class AudioRoutingGraphPlugin {
                 break;
                 
             case 'PROCESSING_SCRIPT':
-                this._addProcessingScript(nodeOptions);
+                await this._addProcessingScript(nodeOptions);
                 break;
         }
     }
