@@ -38,7 +38,7 @@ class AudioRoutingGraphPlugin {
         gainNode.gain.value = gain || 1;
 
         // connecting node to the chain
-        _pushBack(gainNode);
+        this._pushBack(gainNode);
     }
 
     /**
@@ -55,7 +55,7 @@ class AudioRoutingGraphPlugin {
         biquadFilterNode.Q.value = Q || 1;
 
         // connecting node to the chain
-        _pushBack(biquadFilterNode);
+        this._pushBack(biquadFilterNode);
     }
 
     /**
@@ -76,7 +76,7 @@ class AudioRoutingGraphPlugin {
         compressorNode.release.setValueAtTime(release || 0.25, this.audioCtx.currentTime);
 
         // connecting node to the chain
-        _pushBack(compressorNode);
+        this._pushBack(compressorNode);
     }
 
     /**
@@ -91,7 +91,7 @@ class AudioRoutingGraphPlugin {
           });
 
         // connecting node to the chain
-        _pushBack(delayNode);
+        this._pushBack(delayNode);
     }
 
     /**
@@ -109,7 +109,7 @@ class AudioRoutingGraphPlugin {
         convolverNode.normalize = normalize;
         
         // connecting node to the chain
-        _pushBack(convolverNode);
+        this._pushBack(convolverNode);
     }   
 
     /**
@@ -124,7 +124,7 @@ class AudioRoutingGraphPlugin {
         })
 
         // connecting node to the chain
-        _pushBack(waveShaperNode);
+        this._pushBack(waveShaperNode);
     }
 
     /**
@@ -148,7 +148,7 @@ class AudioRoutingGraphPlugin {
             );
 
             // connecting node to the chain
-            _pushBack(audioWorkletNode);
+            this._pushBack(audioWorkletNode);
         } catch(e){
             throw e;
         }
@@ -161,7 +161,8 @@ class AudioRoutingGraphPlugin {
     getProcessedStream() {
 
         // connecting destination at the end of the chain
-        _pushBack(this.destination);
+        this._pushBack(this.destination);
+        // this.nodes[this.nodes.length-1].connect(this.destination);
 
         const processedStream = new MediaStream();
 
