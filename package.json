@@ -1,6 +1,6 @@
 {
-  "name": "audio-routing-graph",
-  "version": "1.0.0",
+  "name": "audio-routing-graph-plugin",
+  "version": "1.2.0",
   "description": "Creates an audio routing chain with custom script processing.",
   "main": "index.js",
   "scripts": {
@@ -8,10 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shlokkzz/audio-routing-graph-plugin"
+    "url": "git+https://github.com/Shlokkzz/audio-routing-graph-plugin.git"
   },
-  "keywords": ["audio" ,"routing" ,"graph"],
+  "keywords": [
+    "audio",
+    "routing",
+    "graph"
+  ],
   "author": "Shlok",
   "license": "ISC",
-   "type": "module"
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Shlokkzz/audio-routing-graph-plugin/issues"
+  },
+  "homepage": "https://github.com/Shlokkzz/audio-routing-graph-plugin#readme"
 }

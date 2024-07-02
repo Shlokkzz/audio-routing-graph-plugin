@@ -221,8 +221,28 @@ class AudioRoutingGraphPlugin {
                  this.addNode('GAIN', { gain: 1.5 });
                  this.addNode('BIQUAD_FILTER', { type: 'highpass', frequency: 1000, Q: 1 });
                  this.addNode('DELAY', { delayTime: 0.3, maxDelayTime: 1 });
+                 break;
             }
-               
+            case 'GAIN_DELAY': {
+                this.addNode('GAIN', { gain: 0.5 });
+                this.addNode('DELAY', { delayTime: 0.25, maxDelayTime: 0.5 });
+                break;
+            }
+            case 'DYNAMIC_DELAY': {
+                this.addNode('DYNAMIC_COMPRESSOR', { threshold:-24, knee:20, ratio:12, attack:0.3, release:0.25 });
+                this.addNode('DELAY', { delayTime: 0.3, maxDelayTime: 1 });
+                break;
+            }
+            case 'ECHO': {
+                this.addNode('DELAY', { delayTime: 0.25, maxDelayTime: 0.5 });
+                this.addNode('GAIN', { gain: 0.5 });
+                break;
+            }
+            case 'BIQUAD_DELAY': {
+                this.addNode('BIQUAD_FILTER', { type: 'highpass', frequency: 2000, Q: 2 });
+                this.addNode('DELAY', { delayTime: 0.25, maxDelayTime: 0.5 });
+                break;
+            }
         }
 
         return this.getProcessedStream();
