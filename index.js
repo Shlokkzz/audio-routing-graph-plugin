@@ -162,7 +162,6 @@ class AudioRoutingGraphPlugin {
 
         // connecting destination at the end of the chain
         this._pushBack(this.destination);
-        // this.nodes[this.nodes.length-1].connect(this.destination);
 
         const processedStream = new MediaStream();
 
