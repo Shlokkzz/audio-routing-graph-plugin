@@ -2,9 +2,11 @@
   "name": "audio-routing-graph-plugin",
   "version": "1.2.1",
   "description": "Creates an audio routing chain with custom script processing.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": ""
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
